@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------------------------------------
+codigo htm del encabezado y todo los demas
+dentro de las etiqueta head poner el siguiente codigo php ---> <?php require_once("conexion.php"); ?> 
+
+<?php 
+$indicador=$_GET['categoria'];
+
+$consulta_categoria ="SELECT * FROM usuarios order by usuLogin";
+$resultado_categoria = mysqli_query($conexion, $consulta_categoria) or die('no se consulto el usuario');
+while($categoria = mysqli_fetch_array($resultado_categoria)){
+    if($indicador==$categoria['nombre de la columna que almacena la categoria del producto']){
+
+?>
+
+
+
+    codigo html de la estructura de la target de los productos (resumido solo mostrar la imagen , nombre precio)
+
+
+
+<?php
+
+    }
+}   
+?>
+
+
+codigo html del footer y todo el resto 
+-----------------------------------------------------------------------------------------
+(en la parte del codigo html donde se muestra o despliega las categorias poner si lleva una etiqueta <a>
+
+href="categoria.php?categoria='nombre_de_la_categoria_correspndiente '"
+
+
+si es otra etiqueta poner:
+onclick="window.location='(rutarelativa)categoria.php?categoria='nombre_de_la_categoria_correspndiente'';"
+
+llamar categoria.php al archivo donde va aparcer cada producto depediendo de su categoria
+tambien poner la ruta relativa en onclick o href donde esta ubicado el archivo categoria.php
+)
